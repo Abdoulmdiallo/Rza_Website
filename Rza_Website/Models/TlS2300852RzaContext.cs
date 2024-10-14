@@ -49,7 +49,7 @@ public partial class TlS2300852RzaContext : DbContext
             entity.Property(e => e.Schedule)
                 .HasColumnType("datetime")
                 .HasColumnName("schedule");
-            entity.Property(e => e.SpecialReqa).HasMaxLength(40);
+            entity.Property(e => e.SpecialReqs).HasMaxLength(40);
             entity.Property(e => e.TicketiD).HasColumnName("ticketiD");
 
             entity.HasOne(d => d.Ticket).WithMany(p => p.Attractions)
