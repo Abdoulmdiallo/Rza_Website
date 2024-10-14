@@ -1,9 +1,13 @@
+nav ul li {
+    margin-bottom: 20px; /* Adjust the value to suit your spacing needs */
+}
+
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+    margin: 10px;
+    padding: 10px;
+    overflow:  auto;
+    background-color:forestgreen;
 }
 
 li {
@@ -13,12 +17,25 @@ li {
     li a {
         display: block;
         color: white;
-        text-align: center;
-        padding: 14px 16px;
+        text-align: end;
+        padding: 14px 20px;
         text-decoration: none;
+        border-style: inset;
+        border-color: darkgreen 
+        forestgreen
+        
     }
 
-        /* Change the link color to #111 (black) on hover */
+  
+        /* Change the link color to #111 (darkgreen) on hover */
         li a:hover {
-            background-color: #111;
+            background-color: darkgreen;
+            
         }
+
+div
+{
+    text-emphasis-position:under
+
+
+}
