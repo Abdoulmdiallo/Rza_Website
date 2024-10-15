@@ -1,5 +1,5 @@
 nav ul li {
-    margin-bottom: 20px; /* Adjust the value to suit your spacing needs */
+    margin-bottom: 0px; /* Adjust the value to suit your spacing needs */
 }
 
 ul {
@@ -20,9 +20,7 @@ li {
         text-align: end;
         padding: 14px 20px;
         text-decoration: none;
-        border-style: inset;
-        border-color: darkgreen 
-        forestgreen
+
         
     }
 
@@ -33,9 +31,3 @@ li {
             
         }
 
-div
-{
-    text-emphasis-position:under
-
-
-}
