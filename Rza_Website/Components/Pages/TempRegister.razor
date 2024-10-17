@@ -12,7 +12,7 @@
 
 <div>
     <label> Password</label><br />
-    <input @bind=newCustomer.Password>
+    <input type = "password" @bind=newCustomer.Password>
 </div>
 
 <div>
@@ -26,27 +26,39 @@
 </div>
 
 <div>
+    <label> Post Code</label><br />
+    <input @bind=newCustomer.Postcode>
+</div>
+
+<div>
+    <label> phone number</label><br />
+    <input type="tel" @bind=newCustomer.PhoneNumber>
+</div>
+
+<div>
     <label> Email</label><br />
-    <input @bind=newCustomer.Email>
+    <input type="email" @bind=newCustomer.Email>
+</div>
+
+<div>
+    <label> Date of birth</label><br />
+    <input type="date" @bind=newCustomer.DateOfBirth>
 </div>
 
 
 <button @onclick=@RegisterCustomer> Register</button>
-<p>Counter: @counter</p>
+
 
 @code {
-        private long counter = 0;
-        private Customer newCustomer;
+        private Customer newCustomer = new Customer();
 
         private async Task RegisterCustomer()
 
         {
-            for (long i = 0; i < 1; i++) // Example: limit it to 1000 for demonstration purposes
-            {
-                // Increment the counter by 1 each time the button is clicked
+
                 await CustomerService.AddCustomerAsync(newCustomer);
-                Console.WriteLine(counter++);
-            }
+                Console.WriteLine("cutton clicked");
+
 
         }
 }

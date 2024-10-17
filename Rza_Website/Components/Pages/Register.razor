@@ -1,6 +1,64 @@
-﻿@page "/Register"
-<h3>Register</h3>
+﻿@using Rza_Website.Services
+@using Rza_Website.Models
+@inject CustomerService CustomerService
+@rendermode InteractiveServer
+@page "/Register"
+<h3>TempRegister</h3>
+<link href="~/CSS/LOGINREGISTER.css" rel="stylesheet" />
+<div>
+    <label> Username</label><br />
+    <input @bind=newCustomer.Username>
+</div>
+
+<div>
+    <label> Password</label><br />
+    <input type="password" @bind=newCustomer.Password>
+</div>
+
+<div>
+    <label> First Name</label><br />
+    <input @bind=newCustomer.FirstName>
+</div>
+
+<div>
+    <label> Last Name</label><br />
+    <input @bind=newCustomer.LastName>
+</div>
+
+<div>
+    <label> Post Code</label><br />
+    <input @bind=newCustomer.Postcode>
+</div>
+
+<div>
+    <label> phone number</label><br />
+    <input type="tel" @bind=newCustomer.PhoneNumber>
+</div>
+
+<div>
+    <label> Email</label><br />
+    <input type="email" @bind=newCustomer.Email>
+</div>
+
+<div>
+    <label> Date of birth</label><br />
+    <input type="date" @bind=newCustomer.DateOfBirth>
+</div>
+
+
+<button @onclick=@RegisterCustomer> Register</button>
+
 
 @code {
+    private Customer newCustomer = new Customer();
 
+    private async Task RegisterCustomer()
+
+    {
+
+        await CustomerService.AddCustomerAsync(newCustomer);
+        Console.WriteLine("cutton clicked");
+
+
+    }
 }

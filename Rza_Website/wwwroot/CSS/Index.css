@@ -1,7 +1,12 @@
 ﻿body {
-    min-height: 800px;
-    border-inline-style:initial
+    min-height: 400px;
+    border: solid;
 }
-.box{background-color:aqua
 
+.Box {
+    height: 200px;
+    width: 160px;
+    display: flex;
+    background-color: #0094ff;
+    font-size: 40pt;
 }
