@@ -18,6 +18,7 @@
     <Content Remove="Components\Pages\Counter.razor" />
     <Content Remove="Components\Pages\Error.razor" />
     <Content Remove="Components\Pages\Plan your visit.razor" />
+    <Content Remove="Components\Pages\Registerlogin.razor" />
     <Content Remove="Components\Pages\Weather.razor" />
     <Content Remove="wwwroot\favicon.png" />
     <Content Remove="wwwroot\Screenshot 2024-09-24 102516.png" />
@@ -38,6 +39,14 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Components\Pages\Registerlogin.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Components\Pages\Registerlogin.razor" />
   </ItemGroup>
 
 </Project>

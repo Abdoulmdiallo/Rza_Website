@@ -1,0 +1,49 @@
+﻿@using Rza_Website.Services
+@using Rza_Website.Models
+@inject CustomerService CustomerService
+@rendermode InteractiveServer
+@page "/Tempregister"
+<h3>TempRegister</h3>
+ <link href="~/CSS/LOGINREGISTER.css" rel="stylesheet" />
+<div>
+    <label> Username</label><br />
+    <input>
+</div>
+
+<div>
+    <label> Password</label><br />
+    <input>
+</div>
+
+<div>
+    <label> First Name</label><br />
+    <input>
+</div>
+
+<div>
+    <label> Last Name</label><br />
+    <input>
+</div>
+
+<div>
+    <label> Email</label><br />
+    <input>
+</div>
+
+
+<button @onclick=@RegisterCustomer> Register</button>
+<p>Counter: @counter</p>
+@code {
+        private long counter = 0;
+
+        private async Task RegisterCustomer()
+
+        {
+            for (long i = 0; i < 1; i++) // Example: limit it to 1000 for demonstration purposes
+            {
+                // Increment the counter by 1 each time the button is clicked
+                Console.WriteLine(counter++);
+            }
+
+        }
+}

@@ -1,13 +1,18 @@
 nav ul li {
-    margin-bottom: 0px; /* Adjust the value to suit your spacing needs */
+    margin-bottom: 0px;
+/* Adjust the value to suit your spacing needs */
 }
 
+li a {
+
+    background-color: darkgreen;
+}
 ul {
     list-style-type: none;
     margin: 10px;
     padding: 10px;
-    overflow:  auto;
-    background-color:forestgreen;
+    overflow: auto;
+    background-color: forestgreen;
 }
 
 li {
@@ -18,16 +23,10 @@ li {
         display: block;
         color: white;
         text-align: end;
-        padding: 14px 20px;
+        padding: 15px 18px;
         text-decoration: none;
-
-        
     }
-
-  
-        /* Change the link color to #111 (darkgreen) on hover */
-        li a:hover {
-            background-color: darkgreen;
-            
-        }
-
+/* Change the link color to #111 (darkgreen) on hover */
+li a:hover {
+    background-color: darkgreen;
+}
