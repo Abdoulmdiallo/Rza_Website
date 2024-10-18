@@ -5,6 +5,7 @@ nav ul li {
 
 
 ul {
+    display: flex;
     list-style-type: none;
     padding: 0px;
     overflow: auto;
@@ -12,28 +13,33 @@ ul {
 }
 /*this controls the items inside unorderer list
 */
+/*set border to 208*/
 .Nav {
     border:solid;
-    align-items: baseline;
-    height: 100px;
-    width: 208px;
+    align-items: center;
+    height: 200px;
+    width: 180px;
     display: flex;
     background-color: forestgreen;
     font-size: 15pt;
 }
 
+    .Nav:hover {
+        background-color: darkgreen;
+    }
+
 li {
     display: flex;
-    
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: forestgreen;
     float: inline-start;
 }
 /*Colour of the links*/
-    li a {
-        color: white;
-        text-decoration: none;
-    }
+li a {
+    border:dashed;
+    color: white;
+    text-decoration: none;
+}
 /* Change the link color to #111 (darkgreen) on hover */
 li a:hover {
     background-color: darkgreen;
