@@ -20,5 +20,14 @@ namespace Rza_Website.Services
 
         }
 
+        public async Task<Customer?> LogIn(Customer customer) 
+        {
+
+            return await _context.Customers.FirstOrDefaultAsync(
+                c => c.Username == customer.Username &&
+                c.Password == customer.Password);
+
+        }
+
     }
 }

@@ -1,46 +1,69 @@
-nav ul li {
-    margin-bottom: 0px;
-/* Adjust the value to suit your spacing needs */
+:root {
+    /*   color variables */
+    --clr-primary: #6aeeb5;
+    --clr-primary-hover: #29e6a7;
+    --clr-primary-dark: #039d69;
+    --clr-gray100: #f0f7f8;
+    --clr-gray200: #cfd8dc;
+    /*   border radius */
+    --radius: 0.2rem;
 }
 
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
 
-ul {
+body {
+    font-family: Montserrat, sans-serif;
+   
+}
+
+.nav-list {
+    background: green;
+    padding:15px;
     display: flex;
-    list-style-type: none;
-    padding: 0px;
-    overflow: auto;
-    background-color: forestgreen;
-}
-/*this controls the items inside unorderer list
-*/
-/*set border to 208*/
-.Nav {
-    border:solid;
+    justify-content: flex-start;
     align-items: center;
-    height: 200px;
-    width: 180px;
-    display: flex;
-    background-color: forestgreen;
-    font-size: 15pt;
+    margin-left:0px
 }
 
-    .Nav:hover {
-        background-color: darkgreen;
+
+
+
+.nav-item {
+    list-style: none;
+    margin-right: 2rem;
+}
+
+    .nav-item a {
+        text-decoration: none;
+        color: black;
+        
     }
 
-li {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: forestgreen;
-    float: inline-start;
+        .nav-item a:hover {
+            color: var(--clr-primary-dark);
+        }
+
+    .nav-item:first-child {
+        margin-right: auto;
+        margin-left: 2rem;
+    }
+
+.btn-primary {
+    font-family: Montserrat, sans-serif;
+    font-size: 1rem;
+    background: var(--clr-primary);
+    border: none;
+    outline: none;
+    border-radius: var(--radius);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 200ms ease-in;
 }
-/*Colour of the links*/
-li a {
-    border:dashed;
-    color: white;
-    text-decoration: none;
-}
-/* Change the link color to #111 (darkgreen) on hover */
-li a:hover {
-    background-color: darkgreen;
-}
+
+    .btn-primary:hover {
+        background: var(--clr-primary-hover);
+    }

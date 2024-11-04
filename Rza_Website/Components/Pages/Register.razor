@@ -1,10 +1,32 @@
-﻿@using Rza_Website.Services
+﻿@page "/Register"
+@using Rza_Website.Services
 @using Rza_Website.Models
+@inject NavigationManager NavigationManager
 @inject CustomerService CustomerService
+@inject Rza_Website.Services.CustomerService CustomerService
 @rendermode InteractiveServer
-@page "/Register"
-<h3>TempRegister</h3>
+
 <link href="~/CSS/LOGINREGISTER.css" rel="stylesheet" />
+
+<h3>TempRegister</h3>
+
+<EditForm Model="newCustomer" OnValidSubmit="HandleValidSubmit" FormName="LoginForm">
+<DataAnnotationsValidator/>
+<ValidationSummary />
+
+<div>
+    <label>Username:</label>
+    <InputText @bind-Value="newCustomer.Username"/>
+</div>
+
+<div>
+    <label>Password:</label>
+    <InputText @bind-Value="password" type="password"/>
+</div>
+<button type="submit"> Register</button>
+</EditForm>
+
+
 <div>
     <label> Username</label><br />
     <input @bind=newCustomer.Username>
@@ -51,13 +73,28 @@
 
 @code {
     private Customer newCustomer = new Customer();
+    private string password; 
 
     private async Task RegisterCustomer()
-
     {
-
         await CustomerService.AddCustomerAsync(newCustomer);
         Console.WriteLine("cutton clicked");
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        newCustomer.Password = password;
+        newCustomer = await CustomerService.LogIn(newCustomer);
+
+        if (newCustomer == null)
+        {
+            Console.WriteLine("yOU ARE NOW LOGGED IN"); 
+        }
+
+        else
+        {
+                NavigationManager.NavigateTo("/");
+        }
 
 
     }
