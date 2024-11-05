@@ -1,12 +1,14 @@
 ﻿@page "/Register"
 @using Rza_Website.Services
 @using Rza_Website.Models
+@using Rza_Website.Utilities
 @inject NavigationManager NavigationManager
 @inject CustomerService CustomerService
 @inject Rza_Website.Services.CustomerService CustomerService
+@inject UserSession UserSession
 @rendermode InteractiveServer
+<link href="/CSS/Index.css" rel="stylesheet" />
 
-<link href="~/CSS/LOGINREGISTER.css" rel="stylesheet" />
 
 <h3>TempRegister</h3>
 
@@ -93,6 +95,7 @@
 
         else
         {
+                UserSession.UserId = newCustomer.CustomerId;
                 NavigationManager.NavigateTo("/");
         }
 
