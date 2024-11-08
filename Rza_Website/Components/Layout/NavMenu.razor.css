@@ -12,9 +12,7 @@
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
 }
-body {
-    margin-top: 100px;
-}
+
 header {
     position: fixed;
     top: 0;
@@ -27,7 +25,9 @@ header {
     align-items: center;
     z-index: 99
 }
-
+body {
+    margin-top: 100px;
+}
 .logo {
     position: relative;
     font-size: 2em;
