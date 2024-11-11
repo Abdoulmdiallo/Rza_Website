@@ -20,7 +20,7 @@ namespace Rza_Website.Services
 
         }
         public async Task<bool> CheckUsernameExistsAsync(string username)
-        {
+        { 
             var result = await _context.Customers.FirstOrDefaultAsync(c => c.Username == username);
             return result != null;
         }
