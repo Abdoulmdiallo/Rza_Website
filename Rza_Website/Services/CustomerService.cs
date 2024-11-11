@@ -19,6 +19,11 @@ namespace Rza_Website.Services
             await _context.SaveChangesAsync();
 
         }
+        public async Task<bool> CheckUsernameExistsAsync(string username)
+        {
+            var result = await _context.Customers.FirstOrDefaultAsync(c => c.Username == username);
+            return result != null;
+        }
 
         public async Task<Customer?> LogIn(Customer customer) 
         {

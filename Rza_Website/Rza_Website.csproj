@@ -21,8 +21,13 @@
     <Content Remove="Components\Pages\Registerlogin.razor" />
     <Content Remove="Components\Pages\Weather.razor" />
     <Content Remove="wwwroot\CSS\LOGINREGISTER.css" />
+    <Content Remove="wwwroot\CSS\Register.css" />
     <Content Remove="wwwroot\favicon.png" />
     <Content Remove="wwwroot\Screenshot 2024-09-24 102516.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Components\Pages\Register.css" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +49,10 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Components\Pages\Registerlogin.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\CSS\Register.css" />
   </ItemGroup>
 
 </Project>

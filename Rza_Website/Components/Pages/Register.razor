@@ -17,12 +17,12 @@
 <ValidationSummary />
 
 <div>
-    <label>Username:</label>
-    <InputText @bind-Value="newCustomer.Username"/>
+    <label  >Username:</label>
+    <InputText  @bind-Value="newCustomer.Username"/>
 </div>
 
 <div>
-    <label>Password:</label>
+        <label  >Password:</label>
     <InputText @bind-Value="password" type="password"/>
 </div>
 <button type="submit"> Register</button>
@@ -31,22 +31,22 @@
 
 <div>
     <label> Username</label><br />
-    <input @bind=newCustomer.Username>
+    <input required @bind=newCustomer.Username>
 </div>
 
 <div>
-    <label> Password</label><br />
-    <input type="password" @bind=newCustomer.Password>
+    <label required> Password</label><br />
+    <input  type="password" @bind=newCustomer.Password>
 </div>
 
 <div>
     <label> First Name</label><br />
-    <input @bind=newCustomer.FirstName>
+    <input required @bind=newCustomer.FirstName>
 </div>
 
 <div>
     <label> Last Name</label><br />
-    <input @bind=newCustomer.LastName>
+    <input required @bind=newCustomer.LastName>
 </div>
 
 <div>
@@ -56,7 +56,7 @@
 
 <div>
     <label> phone number</label><br />
-    <input type="tel" @bind=newCustomer.PhoneNumber>
+    <input required type="tel" @bind=newCustomer.PhoneNumber>
 </div>
 
 <div>
@@ -80,7 +80,8 @@
     private async Task RegisterCustomer()
     {
         await CustomerService.AddCustomerAsync(newCustomer);
-        Console.WriteLine("cutton clicked");
+        Console.WriteLine("button clicked");
+        NavigationManager.NavigateTo("/Register"); 
     }
 
     private async Task HandleValidSubmit()
@@ -90,11 +91,12 @@
 
         if (newCustomer == null)
         {
-            Console.WriteLine("yOU ARE NOW LOGGED IN"); 
+            Console.WriteLine("couldn't log in "); 
         }
 
         else
         {
+                Console.WriteLine("logged in");
                 UserSession.UserId = newCustomer.CustomerId;
                 NavigationManager.NavigateTo("/");
         }
