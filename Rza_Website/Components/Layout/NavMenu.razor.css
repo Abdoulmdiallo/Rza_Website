@@ -59,12 +59,15 @@ body {
     transition: 0.5s;
 }
 
-.navigationa a::after {
+.navigation a::after {
+    left:0;
+    bottom:-6px;
     content: close-quote;
     position: absolute;
     width: 100%;
     height: 3px;
-    background: aliceblue;
+    background: #ffffff;
+    border-radius:10px;
 }
 
 .navigation .btnLogin-popup:hover {

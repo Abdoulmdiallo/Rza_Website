@@ -17,6 +17,7 @@
     <Content Remove="Components\Pages\Component.razor" />
     <Content Remove="Components\Pages\Counter.razor" />
     <Content Remove="Components\Pages\Error.razor" />
+    <Content Remove="Components\Pages\Login.razor" />
     <Content Remove="Components\Pages\Plan your visit.razor" />
     <Content Remove="Components\Pages\Registerlogin.razor" />
     <Content Remove="Components\Pages\Weather.razor" />
@@ -27,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Components\Layout\MainLayout.razor.css" />
     <None Remove="Components\Pages\Register.css" />
   </ItemGroup>
 
@@ -48,12 +50,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="Components\Pages\Login.razor" />
     <_ContentIncludedByDefault Remove="Components\Pages\Registerlogin.razor" />
     <_ContentIncludedByDefault Remove="wwwroot\CSS\HotelBooking.css" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Components\Pages\Login.razor" />
     <None Include="wwwroot\CSS\Register.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Components\Pages\Login.razor" />
   </ItemGroup>
 
 </Project>
