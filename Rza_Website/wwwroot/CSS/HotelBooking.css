@@ -1,0 +1,15 @@
+﻿.picture {
+    display:flex;
+    margin:5px;
+    border:solid;
+    width:99.5%;
+    height:300px;
+    background-color:#00ffff;
+}
+body{
+    border:solid;
+}
+
+.lion{
+    height:100px;
+}

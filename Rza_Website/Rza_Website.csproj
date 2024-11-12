@@ -49,6 +49,7 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Components\Pages\Registerlogin.razor" />
+    <_ContentIncludedByDefault Remove="wwwroot\CSS\HotelBooking.css" />
   </ItemGroup>
 
   <ItemGroup>
