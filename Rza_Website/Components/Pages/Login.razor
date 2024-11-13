@@ -10,9 +10,11 @@
  <link href="/CSS/Login.css" rel="stylesheet"/>
 
 
-<body class="Login_Body">
-</body>
+<body class="Login_Body"></body>
 
+<div class="wrapper">
+
+    <div class="Form-box login"></div>
     <EditForm Model="newCustomer" OnValidSubmit="HandleValidSubmit" FormName="LoginForm" class="register-form">
         <DataAnnotationsValidator />
         <ValidationSummary />
@@ -29,8 +31,11 @@
 
         <button type="submit" class="submit-button">Login</button>
     </EditForm>
+</div>
 
-
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+Basic usage
 @code {
     private Customer newCustomer = new Customer();
     private string password; 
