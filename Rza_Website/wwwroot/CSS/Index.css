@@ -1,1 +1,6 @@
-﻿
+﻿.Home_picture{
+    width:100%;
+    height: 60vh;
+    background-image:url("/Images/Login picture.jpg");
+    background-size:cover;
+}
