@@ -16,7 +16,7 @@ namespace Rza_Website
             builder.Services.AddRazorComponents().AddInteractiveServerComponents();
             builder.Services.AddDbContext<TlS2300852RzaContext>(options => options.UseMySql(builder.Configuration.GetConnectionString("MySqlConnection"), new MySqlServerVersion(new Version(8, 0, 29))));
             builder.Services.AddScoped<CustomerService>();
-
+            builder.Services.AddScoped<AttractionService>();
             builder.Services.AddScoped<UserSession>();
             builder.Services.AddSingleton<UserSession>();
 
