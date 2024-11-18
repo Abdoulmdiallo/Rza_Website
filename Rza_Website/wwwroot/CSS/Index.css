@@ -1,4 +1,4 @@
-﻿/*The picture in the middle under the navbar*/
+﻿/*The picture in the middle the navbar*/
 .Home_picture{
     width:100%;
     height: 730px;
@@ -15,7 +15,6 @@
 }
 .content_wrapper {
     display: flex;
-
     flex-direction: row; /* Aligns items side-by-side horizontally */
     justify-content: space-around; /* Adds space between items */
     align-items: center; /* Centers items vertically within the container */

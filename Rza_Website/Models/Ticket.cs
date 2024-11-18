@@ -5,19 +5,13 @@ namespace Rza_Website.Models;
 
 public partial class Ticket
 {
-    public int? CustomeriD { get; set; }
+    public int TicketId { get; set; }
 
-    public int? AttractioniD { get; set; }
+    public int AttractionId { get; set; }
 
-    public int TicketiD { get; set; }
+    public DateOnly? Date { get; set; }
 
-    public float? Price { get; set; }
+    public virtual Attraction Attraction { get; set; } = null!;
 
-    public DateOnly? ValidFrom { get; set; }
-
-    public string? TicketType { get; set; }
-
-    public virtual Customer? Attraction { get; set; }
-
-    public virtual ICollection<Attraction> Attractions { get; set; } = new List<Attraction>();
+    public virtual ICollection<Ticketbooking> Ticketbookings { get; set; } = new List<Ticketbooking>();
 }

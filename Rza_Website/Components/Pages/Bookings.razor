@@ -1,6 +1,17 @@
-﻿<h3>Bookings</h3>
+﻿@using Rza_Website.Models
+@using Rza_Website.Services
+@inject AttractionService AttractionServices
+<h3>Bookings</h3>
 @page "/Bookings"
 <Rza_Website.Components.Layout.NavMenu />
 @code {
+    List<Attraction> attractions;
+    List<Ticket> tickets;
+    protected override async Task OnInitializedAsync()
+    {
+        attractions = await AttractionServices.GetAttractionsAsync();
+        tickets = new List<Ticket>();
+
+    }
 
 }
