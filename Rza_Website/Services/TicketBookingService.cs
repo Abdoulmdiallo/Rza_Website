@@ -11,13 +11,13 @@ namespace Rza_Website.Services
         {
             _context = context;
         }
-        public async Task<List<Ticket>> GetTicketsAsync()
+        public async Task<List<Ticketbooking>> GetTicketBookingAsync()
         {
-            return await _context.Tickets.ToListAsync();
+            return await _context.Ticketbookings.ToListAsync();
         }
-        public async Task AddTicketAsync(Ticket newTicket)
+        public async Task AddTicketBookingAsync(Ticketbooking newTicketbooking)
         {
-            await _context.Tickets.AddAsync(newTicket);
+            await _context.Ticketbookings.AddAsync(newTicketbooking);
             await _context.SaveChangesAsync();
         }
     }

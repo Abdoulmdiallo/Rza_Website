@@ -4,6 +4,9 @@
 @using Utilities
 @inject UserSession UserSession
 @inject NavigationManager NavigationManager
+@inject TicketBookingService TicketBookingService
+@inject TicketService TicketService
+
 
 <h3>Bookings</h3>
 @page "/Bookings"
@@ -16,6 +19,7 @@
         <div>
             @attraction.Name: £@attraction.Price
             <button @onclick="@(e => AddTicket(attraction.AttractionId))">Add to Basket</button>
+
         </div>
     }
     <button>Book Tickets</button>
@@ -28,25 +32,51 @@ else
 
 @code {
 
+
     List<Attraction> attractions;
     List<Ticket> tickets;
+    DateOnly ticketDate;
+    Ticketbooking newTicketbooking;
+
 
     protected override async Task OnInitializedAsync()
     {
-        attractions = await AttractionService.GetAttractionsAsync();
-        tickets = new List<Ticket>();
+        if (UserSession.UserId == 0)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+
+        else
+        {
+            attractions = await AttractionService.GetAttractionsAsync();
+            tickets = new List<Ticket>();
+        }
     }
 
     private void AddTicket(int attractionId)
     {
+        Console.WriteLine("AddTicket button was clicked");
         Ticket newTicket = new Ticket();
         newTicket.AttractionId = attractionId;
+        tickets.Add(newTicket);
     }
 
-    private void BookTicekts()
+    private async Task BookTickets()
     {
-
+        //this one books all the tickets in the basket
+        Ticketbooking newTicketbooking = new Ticketbooking();
+        newTicketbooking.CustomerId = UserSession.UserId;
+        newTicketbooking.Date = ticketDate;
+        newTicketbooking.Date = DateOnly.FromDateTime(DateTime.Now);
+        await TicketBookingService.AddTicketBookingAsync(newTicketbooking);
+        
+        foreach (Ticket ticket in tickets)
+        {
+            ticket.Ticketbooking = newTicketbooking;
+            await TicketService.AddTicketAsync(ticket);
+        }
     }
+}
 
 }
 
