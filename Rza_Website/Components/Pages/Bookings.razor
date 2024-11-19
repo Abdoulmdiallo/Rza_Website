@@ -1,17 +1,55 @@
 ﻿@using Rza_Website.Models
 @using Rza_Website.Services
-@inject AttractionService AttractionServices
+@inject AttractionService AttractionService
+@using Utilities
+@inject UserSession UserSession
+@inject NavigationManager NavigationManager
+
 <h3>Bookings</h3>
 @page "/Bookings"
 <Rza_Website.Components.Layout.NavMenu />
+
+@if (attractions != null)
+{
+    @foreach (Attraction attraction in attractions)
+    {
+        <div>
+            @attraction.Name: £@attraction.Price
+            <button @onclick="@(e => AddTicket(attraction.AttractionId))">Add to Basket</button>
+        </div>
+    }
+    <button>Book Tickets</button>
+}
+else
+{
+    <div>no attractions</div>
+}
+
+
 @code {
+
     List<Attraction> attractions;
     List<Ticket> tickets;
+
     protected override async Task OnInitializedAsync()
     {
-        attractions = await AttractionServices.GetAttractionsAsync();
+        attractions = await AttractionService.GetAttractionsAsync();
         tickets = new List<Ticket>();
+    }
+
+    private void AddTicket(int attractionId)
+    {
+        Ticket newTicket = new Ticket();
+        newTicket.AttractionId = attractionId;
+    }
+
+    private void BookTicekts()
+    {
 
     }
 
 }
+
+
+
+
