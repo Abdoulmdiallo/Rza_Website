@@ -121,7 +121,7 @@ public partial class TlS2300852RzaContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("roombookings_ibfk_1");
 
-            entity.HasOne(d => d.RoomNumberNavigation).WithMany(p => p.Roombookings)
+            entity.HasOne(d => d.Room).WithMany(p => p.Roombookings)
                 .HasForeignKey(d => d.RoomNumber)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("roombookings_ibfk_2");
