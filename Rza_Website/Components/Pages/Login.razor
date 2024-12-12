@@ -7,14 +7,14 @@
 @inject UserSession UserSession
 @rendermode InteractiveServer
 @page "/Login"
- <link href="/CSS/Login.css" rel="stylesheet"/>
+<link href="/CSS/Login.css" rel="stylesheet"/>
 
 
 <body class="Login_Body"></body>
 
 <div class="wrapper">
 
-    
+
     <EditForm Model="newCustomer" OnValidSubmit="HandleValidSubmit" FormName="LoginForm" class="register-form">
         <DataAnnotationsValidator />
         <ValidationSummary />
@@ -47,12 +47,14 @@
         if (newCustomer == null)
         {
             Console.WriteLine("couldn't log in ");
+           
         }
 
         else
         {
             Console.WriteLine("logged in");
             UserSession.UserId = newCustomer.CustomerId;
+            Console.WriteLine(UserSession.UserId);
             NavigationManager.NavigateTo("/");
         }
 

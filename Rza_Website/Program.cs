@@ -19,7 +19,7 @@ namespace Rza_Website
             builder.Services.AddScoped<AttractionService>();
             builder.Services.AddScoped<TicketService>();
             builder.Services.AddScoped<TicketBookingService>();
-            builder.Services.AddScoped<UserSession>();
+            builder.Services.AddSingleton<UserSession>();
             builder.Services.AddScoped<RoomBookingService>();
             builder.Services.AddScoped<RoomService>();
             
