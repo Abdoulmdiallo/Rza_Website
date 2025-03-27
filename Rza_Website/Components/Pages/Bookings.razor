@@ -50,13 +50,11 @@ else
     {
         if (UserSession.UserId == 0)
         {
-            Console.WriteLine("Userid not saved");
-            NavigationManager.NavigateTo("/");
+           NavigationManager.NavigateTo("/");
         }
-
         else
         {
-            
+            NavigationManager.NavigateTo("/Bookings");
             attractions = await AttractionService.GetAttractionsAsync();
             tickets = new List<Ticket>();
             newTicketbooking = new Ticketbooking();
